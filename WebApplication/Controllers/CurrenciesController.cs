@@ -8,10 +8,15 @@ namespace WebApplication.Controllers
     [ApiController]
     public class CurrenciesController : Controller
     {
+        private readonly ICurrencyService _currencyService;
         private readonly CurrenciesResponse _currencies;
 
-        public CurrenciesController() =>
-            _currencies = HttpClient.GetCurrenciesAsync().Result;
+        public CurrenciesController(ICurrencyService currencyService)
+        {
+            _currencyService = currencyService;
+            _currencies = _currencyService.GetCurrenciesAsync().Result;
+        }
+            
 
         // GET: Currencies
         [HttpGet]
