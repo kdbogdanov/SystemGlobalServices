@@ -5,9 +5,9 @@ using Flurl.Http;
 
 namespace WebApplication.Services
 {
-    public class HttpClient
+    public class CurrencyService : ICurrencyService
     {
-        public static async Task<CurrenciesResponse> GetCurrenciesAsync()
+        public async Task<CurrenciesResponse> GetCurrenciesAsync()
         {
             var response = await ConfigurationManager.AppSettings.Get("Url")
                 .GetJsonAsync<CurrenciesResponse>();
