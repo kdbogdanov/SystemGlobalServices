@@ -1,5 +1,8 @@
 ﻿namespace WebApplication.Models
 {
+    /// <summary>
+    /// Class for storing all information about the currency
+    /// </summary>
     public class CurrencyInfo
     {
         public string ID { get; set; }

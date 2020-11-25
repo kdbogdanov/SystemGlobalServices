@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace WebApplication.Models
 {
+    /// <summary>
+    /// Сlass for storing all information about 
+    /// daily data on exchange rates of the Central Bank
+    /// </summary>
     public class CurrenciesResponse
     {
         public DateTime Date { get; set; }

@@ -1,11 +1,15 @@
 ﻿using System.Linq;
 using WebApplication.Services;
-using WebApplication.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace WebApplication.Controllers
 {
+    /// <summary>
+    /// Controller that implements 2 api methods:
+    /// GET /currencies
+    /// GET /currency/ 
+    /// </summary>
     [ApiController]
     public class CurrenciesController : Controller
     {
@@ -15,7 +19,14 @@ namespace WebApplication.Controllers
             _currencyService = currencyService;
 
 
-        // GET: Currencies
+        /// <summary>
+        /// GET: /currencies
+        /// Should return a list of currency rates 
+        /// with the possibility of pagination.
+        /// </summary>
+        /// <param name="page">Current page</param>
+        /// <param name="pageSize">Number of currencies per page</param>
+        /// <returns></returns>
         [HttpGet]
         [Route("api/currencies")]
         public async Task<ActionResult> GetCurrenciesAsync(int page = 1, int pageSize = 3)
@@ -27,7 +38,13 @@ namespace WebApplication.Controllers
             return Ok(items);
         }
 
-        // GET: Currency/
+        /// <summary>
+        /// Get: /currency/
+        /// Should return the currency rate 
+        /// for the passed currency identifier.
+        /// </summary>
+        /// <param name="id">Currency identifier</param>
+        /// <returns></returns>
         [HttpGet]
         [Route("api/currency/{id?}")]
         public async Task<ActionResult> GetCurrencyAsync(string id = "R01235")
