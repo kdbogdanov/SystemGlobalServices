@@ -26,7 +26,6 @@ namespace WebApplication.Controllers
         /// </summary>
         /// <param name="page">Current page</param>
         /// <param name="pageSize">Number of currencies per page</param>
-        /// <returns></returns>
         [HttpGet]
         [Route("api/currencies")]
         public async Task<ActionResult> GetCurrenciesAsync(int page = 1, int pageSize = 3)
@@ -44,7 +43,6 @@ namespace WebApplication.Controllers
         /// for the passed currency identifier.
         /// </summary>
         /// <param name="id">Currency identifier</param>
-        /// <returns></returns>
         [HttpGet]
         [Route("api/currency/{id?}")]
         public async Task<ActionResult> GetCurrencyAsync(string id = "R01235")

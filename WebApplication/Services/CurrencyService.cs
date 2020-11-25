@@ -14,7 +14,6 @@ namespace WebApplication.Services
         /// Asynchronous method for making a get request 
         /// for daily exchange rate data
         /// </summary>
-        /// <returns></returns>
         public async Task<CurrenciesResponse> GetCurrenciesAsync()
         {
             var response = await ConfigurationManager.AppSettings.Get("Url")

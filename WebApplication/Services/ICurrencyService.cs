@@ -13,7 +13,6 @@ namespace WebApplication.Services
         /// Asynchronous method for making a get request 
         /// for daily exchange rate data
         /// </summary>
-        /// <returns></returns>
         Task<CurrenciesResponse> GetCurrenciesAsync();
     }
 }
